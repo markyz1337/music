@@ -22,12 +22,13 @@
     </style>
 </head>
 <body>
-    <video id="videoPlayer" class="video-js vjs-default-skin" controls autoplay preload="auto">
+    <video id="videoPlayer" class="video-js vjs-default-skin" controls preload="auto">
         <source src="https://live10de.antenaplay.ro/zurtv/zurtv/chunklist.m3u8?version=1&session=T3KxCLfF8nX2fkEbYSAb&starttime=1718467998&endtime=1718482428&source=zuweb&token=p_LrV2Cu34ulT1ZhM4cwx4w-7-E=" type="application/x-mpegURL">
     </video>
     <script>
         var player = videojs('videoPlayer');
         player.ready(function() {
+            player.muted(true);
             player.play();
             player.requestFullscreen();
         });
