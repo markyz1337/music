@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live TV</title>
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: black;
+        }
+        .video-js {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video id="videoPlayer" class="video-js vjs-default-skin" controls autoplay preload="auto">
+        <source src="https://live10de.antenaplay.ro/zurtv/zurtv/chunklist.m3u8?version=1&session=T3KxCLfF8nX2fkEbYSAb&starttime=1718467998&endtime=1718482428&source=zuweb&token=p_LrV2Cu34ulT1ZhM4cwx4w-7-E=" type="application/x-mpegURL">
+    </video>
+    <script>
+        var player = videojs('videoPlayer');
+        player.ready(function() {
+            player.play();
+            player.requestFullscreen();
+        });
+    </script>
+</body>
+</html>
